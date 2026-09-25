@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>    
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="PreviewHandlerSampleApp.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\source\Brows.Win32.PreviewHandler.Windows\Brows.Win32.PreviewHandler.Windows.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Brows.Win32.STAThreadPool" />
+    <PackageReference Include="Domore.Logs" />
+  </ItemGroup>
+</Project>
