@@ -33,9 +33,9 @@ internal sealed class PreviewWorkerCLSID {
         });
     }
 
-    public STAThreadPool ThreadPool { get; }
+    public ISTAThreadPool ThreadPool { get; }
 
-    public PreviewWorkerCLSID(STAThreadPool threadPool) {
+    public PreviewWorkerCLSID(ISTAThreadPool threadPool) {
         ThreadPool = threadPool ?? throw new ArgumentNullException(nameof(threadPool));
     }
 

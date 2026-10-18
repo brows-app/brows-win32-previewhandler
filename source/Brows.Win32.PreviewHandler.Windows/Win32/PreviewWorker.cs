@@ -12,13 +12,13 @@ internal sealed class PreviewWorker {
     private static long ID;
     private static readonly ILog Log = Logging.For(typeof(PreviewWorker));
 
-    private readonly Lazy<STAThreadPool> LazyThreadPool = new(() =>
-        new(nameof(PreviewWorker) + "-" + Interlocked.Increment(ref ID)) {
+    private readonly Lazy<ISTAThreadPool> LazyThreadPool = new(() =>
+        new STAThreadPool(nameof(PreviewWorker) + "-" + Interlocked.Increment(ref ID)) {
             WorkerCountMax = 1,
             WorkerCountMin = 0
         });
 
-    private STAThreadPool ThreadPool => field ??= LazyThreadPool.Value;
+    private ISTAThreadPool ThreadPool => field ??= LazyThreadPool.Value;
 
     private PreviewWorkerCLSID CLSID => field ??= new PreviewWorkerCLSID(ThreadPool);
 
